@@ -33,7 +33,7 @@ namespace TicTacToe.Controllers
         {
             GameManager.GameList.Add(newGameModel.gameId);
 
-            Game newGame = new Game(newGameModel);
+            Game newGame = new Game(newGameModel.O, newGameModel.X, newGameModel.gameId);
             GameManager.GameDictionary.Add(newGameModel.gameId, newGame);
 
             return Ok();

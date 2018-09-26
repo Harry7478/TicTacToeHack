@@ -8,15 +8,21 @@ namespace TicTacToe
 {
     public class Game
     {
-        public Game(NewGameModel newGameModel)
+        public Game(string O, string X, Guid gameId)
         {
-            Model = newGameModel;
+            this.O = O;
+            this.X = X;
+            this.gameId = gameId;
             Board = new string[9];
             Winner = "";
             Status = "Ongoing";
         }
+        
+        public string O { get; set; }
 
-        public NewGameModel Model { get; set; }
+        public string X { get; set; }
+
+        public Guid gameId { get; set; }
 
         public string Status { get; set; }
 
