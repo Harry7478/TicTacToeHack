@@ -10,5 +10,7 @@ namespace TicTacToe
     {
         
         public static List<Guid> GameList = new List<Guid>();
+
+        public static Dictionary<Guid, Game> GameDictionary = new Dictionary<Guid, Game>();
     }
 }

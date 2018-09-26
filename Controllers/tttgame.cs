@@ -22,16 +22,19 @@ namespace TicTacToe.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<Game> Get(Guid id)
         {
-            return "value";
+            return GameManager.GameDictionary[id];
         }
 
         // POST api/values
         [HttpPost]
-        public IActionResult Post([FromBody] NewGameModel newGame)
+        public IActionResult Post([FromBody] NewGameModel newGameModel)
         {
-            GameManager.GameList.Add(newGame.gameId);
+            GameManager.GameList.Add(newGameModel.gameId);
+
+            Game newGame = new Game(newGameModel);
+            GameManager.GameDictionary.Add(newGameModel.gameId, newGame);
 
             return Ok();
 
