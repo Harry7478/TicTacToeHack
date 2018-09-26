@@ -8,7 +8,7 @@ using TicTacToe.Models;
 namespace TicTacToe.Controllers
 {
 
-    [Route("api/[controller]")]
+    [Route("api/tttgame")]
     [ApiController]
     public class tttgame : ControllerBase
     {
@@ -37,20 +37,15 @@ namespace TicTacToe.Controllers
             GameManager.GameDictionary.Add(newGameModel.gameId, newGame);
 
             return Ok();
-
-
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPost("play")]
+        public IActionResult Post([FromBody] PlayModel playModel)
         {
+            //GameManager.GameDictionary[playModel.gameId].PlayGame(playModel.player, playModel.boardPosition);
+
+            return Ok();
         }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

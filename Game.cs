@@ -31,5 +31,8 @@ namespace TicTacToe
         public string[] Board { get; set; }
 
 
+        public void PlayGame(string playModelPlayer, int playModelBoardPosition)
+        {
+        }
     }
 }
